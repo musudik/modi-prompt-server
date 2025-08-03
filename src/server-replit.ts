@@ -16,7 +16,7 @@ app.use(
       'http://localhost:5173',
       'https://mp-client.replit.app',
       process.env.FRONTEND_URL
-    ].filter(Boolean),
+    ].filter((url): url is string => Boolean(url)),
     credentials: true,
   }),
 );
