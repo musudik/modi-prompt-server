@@ -12,7 +12,11 @@ const PORT = parseInt(process.env.PORT as string, 10) || 3001;
 // CORS configuration for Replit
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || true,
+    origin: [
+      'http://localhost:5173',
+      'https://mp-client.replit.app',
+      process.env.FRONTEND_URL
+    ].filter(Boolean),
     credentials: true,
   }),
 );
