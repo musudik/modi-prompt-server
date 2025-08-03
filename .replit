@@ -1,0 +1,10 @@
+modules = ["nodejs-20"]
+run = "npm run dev"
+
+[nix]
+channel = "stable-25_05"
+
+[deployment]
+run = ["sh", "-c", "npm run start:replit"]
+deploymentTarget = "cloudrun"
+build = ["sh", "-c", "npm run build"]
